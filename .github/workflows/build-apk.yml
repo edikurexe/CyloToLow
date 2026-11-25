@@ -10,8 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Source Code
+      - name: Checkout Repository
         uses: actions/checkout@v4
+
+      - name: Unzip Source Project
+        run: unzip -o CycloToLow_v1.0.0_Source_Project.zip
 
       - name: Setup JDK 17
         uses: actions/setup-java@v4
@@ -53,3 +56,4 @@ jobs:
         with:
           name: CycloToLow-v1.0.0-APK
           path: CycloToLow-v1.0.0-signed.apk
+          
